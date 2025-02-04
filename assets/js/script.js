@@ -1,4 +1,4 @@
-// Most Popular Destination code here-----> 
+// Most Popular Destination code here----->
 $(document).ready(function () {
 	const $carousel = $("#carousel");
 	const scrollAmount = 300;
@@ -282,6 +282,8 @@ const countries = [
 
 // Get the container div
 const destinationList = document.getElementById("destination-list");
+const dropdown = document.getElementById("destination_id_form");
+const nationalitySelect = document.getElementById("nationality_id");
 
 // Loop through the array and create div elements dynamically
 countries.forEach((country, index) => {
@@ -297,13 +299,20 @@ countries.forEach((country, index) => {
 	destinationList.appendChild(div);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const dropdown = document.getElementById("destination_id_form");
-
-    countries.forEach((country, index) => {
-        let option = document.createElement("option");
-        option.value = `destination_${index + 1}`;
-        option.textContent = country;
-        dropdown.appendChild(option);
-    });
+countries.forEach((country, index) => {
+	let option = document.createElement("option");
+	option.value = `destination_${index + 1}`;
+	option.textContent = country;
+	dropdown.appendChild(option);
 });
+countries.forEach((country) => {
+	const option = document.createElement("option");
+	option.value = country;
+	option.textContent = country;
+	nationalitySelect.appendChild(option);
+});
+
+// form-javascript------->
+
+
+
