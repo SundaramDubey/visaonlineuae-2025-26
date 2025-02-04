@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 $route['default_controller'] = 'header';
+// $route['default_controller'] = 'form';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['header'] = 'header/visa_header';
@@ -60,5 +61,7 @@ $route['reviews'] = 'header/customer_reviews';
 $route['contact'] = 'header/contact';
 $route['form'] = 'header/load_form_data';
 $route['destination'] = 'header/load_form_data';
+$route['form'] = 'form/index';
+
 
 

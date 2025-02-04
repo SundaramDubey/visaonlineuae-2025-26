@@ -1,0 +1,188 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #41ba9c;
+	margin: 0;
+	padding: 0;
+}
+
+.form-row {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px; /* Adds space between the two divs */
+}
+
+.form-group {
+	flex: 1;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 3px;
+	text-align: left;
+}
+
+.form-group select {
+	width: 100%; /* Ensures the select element fills the div */
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+form {
+	max-width: 1200px;
+	margin: 20px auto;
+	background: #41ba9c;
+	margin-top: 80px;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+	font-size: 1.3rem;
+	color: #333;
+	margin-bottom: 15px;
+	text-align: left;
+}
+
+.form-section {
+	margin-bottom: 20px;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+label {
+	font-weight: 600;
+	display: block;
+	margin-bottom: 5px;
+}
+
+/* Input Fields with 3D Effect */
+input[type="text"],
+input[type="email"],
+select {
+	width: 100%;
+	padding: 12px;
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	box-sizing: border-box;
+	transition: all 0.3s ease-in-out;
+	box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.2);
+	background-color: #fff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+	border-color: #4caf50;
+	box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.3);
+	outline: none;
+}
+
+input[type="checkbox"] {
+	margin-right: 10px;
+}
+
+/* Button Styling with 3D Effect */
+.button-group {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	margin-top: 20px;
+}
+
+button {
+	padding: 14px 30px;
+	font-size: 1.1rem;
+	color: #fff;
+	background-color: #f69321;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	flex: 1;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 5px #4b361f, 0 8px 15px rgba(0, 0, 0, 0.2);
+	position: relative;
+}
+
+button:hover {
+	background-color: #3d8b40;
+	box-shadow: 0 3px #2e6b30, 0 6px 12px rgba(0, 0, 0, 0.2);
+	transform: translateY(2px);
+}
+
+button:active {
+	box-shadow: 0 1px #2e6b30, 0 3px 6px rgba(0, 0, 0, 0.2);
+	transform: translateY(4px);
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 200px;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	border-radius: 5px;
+	padding: 5px;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -100px;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
+.form-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.select-group {
+	display: flex;
+	gap: 10px; /* Adjusts spacing between selects */
+}
+
+.select-group select {
+	flex: 1;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	min-width: 100px; /* Ensures proper width */
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.select-group {
+	display: flex;
+	gap: 10px; /* Adjusts spacing between selects */
+}
+
+.select-group select {
+	flex: 1;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	min-width: 100px; /* Ensures proper width */
+}

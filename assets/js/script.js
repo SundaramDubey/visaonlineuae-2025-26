@@ -1,3 +1,4 @@
+// Most Popular Destination code here-----> 
 $(document).ready(function () {
 	const $carousel = $("#carousel");
 	const scrollAmount = 300;

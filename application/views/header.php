@@ -21,8 +21,8 @@
                 <div class="logoPanel">
                     <a href="<?php echo base_url('tour'); ?>" class="row">
                         <img class="marginTopsm marginRight flags lazy"
-                            src="<?php echo base_url('assets/images/bmb-logo-sm.png'); ?>" height="40"
-                            style="display: unset; position:relative; float:left; top: 2px;" alt="UAE" />
+                            src="<?php echo base_url('assets/images/bmb-logo-sm.png'); ?>" height="50"
+                            style="display: unset; position:relative; float:left; top: -5px;" alt="UAE" />
                     </a>
                 </div>
                 <div class="navigationmain-section">
@@ -68,7 +68,7 @@
 
             <div class="searchsection-inner-main fl">
                 <div class="searchsection-inner fl">
-                    <form action="/visa/apply" method="post">
+                    <form action="http://localhost/visaonlineuae-2025-26/index.php/form" method="post">
                         <div class="forminputcol selectcountry fl col-35 citizenfield">
                             <!-- <label class="row" for="destination_id_form">Please Choose Destination</label> -->
                             <select name="destination_id_form" id="destination_id_form" class="row"
@@ -76,11 +76,6 @@
                                 <option value="" selected disabled>Select Destination</option>
                             </select>
                         </div>
-
-                        <!-- <div class="searchbtn fr col-30">
-                            <input type="button" class="tac dib row btn-apply" value="Select & Apply Now"
-                                name="btnSubmit">
-                        </div> -->
                     </form>
                 </div>
             </div>
@@ -345,8 +340,6 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </section>
@@ -396,7 +389,7 @@
                         <div class="container paddingFromTop">
                             <p
                                 class="row upperCase titleFont white paddingFromBottom marginFromTop alignFromCenter mobpadding-0 mobmargin-0">
-                                Payment Method
+                            <h2><strong>Payment Method</strong></h2>
                             </p>
                             <div class="row">
                                 <img src="<?= base_url('assets/images/payment.webp'); ?>" alt="Payment Methods"

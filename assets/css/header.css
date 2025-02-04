@@ -19,16 +19,18 @@
 	justify-content: space-between;
 	height: 75px;
 	padding: 0 20px;
-	background:  #13b58d ;
+	background:  #fff ;
 }
 
 .logoPanel {
 	margin: 10px 0 0;
 	width: auto;
+	
 }
 
 .logoPanel img {
 	width: 100px;
+	
 }
 
 .navigation {
