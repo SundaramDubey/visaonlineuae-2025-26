@@ -1,86 +1,97 @@
 // Most Popular Destination code here----->
 $(document).ready(function () {
-	const $carousel = $("#carousel");
-	const scrollAmount = 300;
-	let autoScroll;
-	let isManualScroll = false;
+    const $carousel = $("#carousel");
+    const scrollAmount = 300;
+    let autoScroll;
+    let isManualScroll = false;
 
-	// Function to start auto-scrolling
-	function startAutoScroll() {
-		stopAutoScroll(); // Clear existing interval if any
-		autoScroll = setInterval(() => {
-			if (!isManualScroll) {
-				let maxScroll = $carousel[0].scrollWidth - $carousel.outerWidth();
-				let currentScroll = $carousel.scrollLeft();
+    // Function to start auto-scrolling
+    function startAutoScroll() {
+        stopAutoScroll(); // Clear existing interval if any
+        autoScroll = setInterval(() => {
+            if (!isManualScroll) {
+                // Check if $carousel is defined and exists
+                if ($carousel.length > 0) {
+                    let maxScroll = $carousel[0].scrollWidth - $carousel.outerWidth();
+                    let currentScroll = $carousel.scrollLeft();
 
-				if (currentScroll >= maxScroll) {
-					// Restart scrolling from the left side when it reaches the end
-					$carousel.animate({ scrollLeft: 0 }, 800);
-				} else {
-					// Continue scrolling to the right
-					$carousel.animate(
-						{ scrollLeft: "+=" + scrollAmount },
-						600,
-						snapToCard
-					);
-				}
-			}
-		}, 3000);
-	}
+                    if (currentScroll >= maxScroll) {
+                        // Restart scrolling from the left side when it reaches the end
+                        $carousel.animate({ scrollLeft: 0 }, 800);
+                    } else {
+                        // Continue scrolling to the right
+                        $carousel.animate(
+                            { scrollLeft: "+=" + scrollAmount },
+                            600,
+                            snapToCard
+                        );
+                    }
+                } else {
+                    console.error("Carousel element not found.");
+                }
+            }
+        }, 3000);
+    }
 
-	// Function to stop auto-scroll when user interacts
-	function stopAutoScroll() {
-		clearInterval(autoScroll);
-		setTimeout(startAutoScroll, 5000); // Restart auto-scroll after 5 sec
-	}
+    // Function to stop auto-scroll when user interacts
+    function stopAutoScroll() {
+        clearInterval(autoScroll);
+        setTimeout(startAutoScroll, 5000); // Restart auto-scroll after 5 sec
+    }
 
-	// Scroll Left Button
-	$("#left-btn").click(function () {
-		isManualScroll = true;
-		stopAutoScroll();
-		$carousel.animate({ scrollLeft: "-=" + scrollAmount }, 400, function () {
-			isManualScroll = false;
-		});
-	});
+    // Scroll Left Button
+    $("#left-btn").click(function () {
+        isManualScroll = true;
+        stopAutoScroll();
+        $carousel.animate({ scrollLeft: "-=" + scrollAmount }, 400, function () {
+            isManualScroll = false;
+        });
+    });
 
-	// Scroll Right Button
-	$("#right-btn").click(function () {
-		isManualScroll = true;
-		stopAutoScroll();
-		$carousel.animate({ scrollLeft: "+=" + scrollAmount }, 400, function () {
-			isManualScroll = false;
-		});
-	});
+    // Scroll Right Button
+    $("#right-btn").click(function () {
+        isManualScroll = true;
+        stopAutoScroll();
+        $carousel.animate({ scrollLeft: "+=" + scrollAmount }, 400, function () {
+            isManualScroll = false;
+        });
+    });
 
-	// Snaps to the nearest card dynamically
-	function snapToCard() {
-		let scrollLeft = $carousel.scrollLeft();
-		let closestCard = null;
-		let minDistance = Infinity;
+    // Snaps to the nearest card dynamically
+    function snapToCard() {
+        let scrollLeft = $carousel.scrollLeft();
+        let closestCard = null;
+        let minDistance = Infinity;
 
-		$(".card").each(function () {
-			let cardOffset = $(this).position().left + $carousel.scrollLeft();
-			let distance = Math.abs(cardOffset - scrollLeft);
+        $(".card").each(function () {
+            let cardOffset = $(this).position().left + $carousel.scrollLeft();
+            let distance = Math.abs(cardOffset - scrollLeft);
 
-			if (distance < minDistance) {
-				minDistance = distance;
-				closestCard = $(this);
-			}
-		});
+            if (distance < minDistance) {
+                minDistance = distance;
+                closestCard = $(this);
+            }
+        });
 
-		if (closestCard) {
-			$carousel.animate(
-				{ scrollLeft: closestCard.position().left + $carousel.scrollLeft() },
-				300
-			);
-			$(".card").removeClass("active");
-			closestCard.addClass("active");
-		}
-	}
+        if (closestCard) {
+            $carousel.animate(
+                { scrollLeft: closestCard.position().left + $carousel.scrollLeft() },
+                300
+            );
+            $(".card").removeClass("active");
+            closestCard.addClass("active");
+        }
+    }
 
-	// Start auto-scroll on load
-	startAutoScroll();
+    // Ensure $carousel exists before starting auto-scroll
+    if ($carousel.length > 0) {
+        // Start auto-scroll on load
+        startAutoScroll();
+    } else {
+        console.error("Carousel element not found.");
+    }
 });
+
 
 // Define country list as an array
 const countries = [
@@ -280,39 +291,31 @@ const countries = [
 	"Zimbabwe",
 ];
 
-// Get the container div
-const destinationList = document.getElementById("destination-list");
-const dropdown = document.getElementById("destination_id_form");
-const nationalitySelect = document.getElementById("nationality_id");
+// Get the container divs
+const $destinationList = $("#destination-list");
+const $dropdown = $("#destination_id_form");
 
-// Loop through the array and create div elements dynamically
+// Append destination items dynamically
+if ($destinationList.length) {
+	countries.forEach((country, index) => {
+		const $div = $("<div>").addClass("destination-item").text(country);
+
+		if ((index + 1) % 3 === 0) {
+			$div.addClass("highlight");
+		}
+
+		$destinationList.append($div);
+	});
+} else {
+	console.error("destinationList element not found.");
+}
+
+
 countries.forEach((country, index) => {
-	const div = document.createElement("div");
-	div.className = "destination-item";
+	// Destination dropdown option
+	const $destinationOption = $("<option>")
+		.val(`destination_${index + 1}`)
+		.text(country);
+	$dropdown.append($destinationOption);
 
-	// Add highlight class for every 3rd country (example logic)
-	if ((index + 1) % 3 === 0) {
-		div.classList.add("highlight");
-	}
-
-	div.textContent = country;
-	destinationList.appendChild(div);
 });
-
-countries.forEach((country, index) => {
-	let option = document.createElement("option");
-	option.value = `destination_${index + 1}`;
-	option.textContent = country;
-	dropdown.appendChild(option);
-});
-countries.forEach((country) => {
-	const option = document.createElement("option");
-	option.value = country;
-	option.textContent = country;
-	nationalitySelect.appendChild(option);
-});
-
-// form-javascript------->
-
-
-

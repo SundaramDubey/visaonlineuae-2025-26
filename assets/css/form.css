@@ -5,6 +5,9 @@ body {
 	padding: 0;
 }
 
+.country-list h2 {
+	margin: 5px 0;
+}
 .form-row {
 	display: flex;
 	justify-content: space-between;

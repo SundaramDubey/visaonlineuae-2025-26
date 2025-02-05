@@ -7,8 +7,9 @@
     <title><?php echo isset($title) ? $title : "Visa UAE"; ?></title>
     <link rel="stylesheet" href="<?php echo base_url('assets/css/header.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/form.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/js/script.js'); ?>" class="js">
+    <link rel="stylesheet" href="script_form.js">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 </head>
 
@@ -59,11 +60,12 @@
     </header>
 
     <form id="vForm" name="vForm" action="#" method="post" enctype="multipart/form-data">
+        <div class="country-list" id="countryList">Loading countries...</div>
         <div class="form-section">
             <h3>General Details</h3>
 
             <div class="form-row">
-                <div class="form-group">
+                <div class="form-group ">
                     <label for="nationality_id">Nationality</label>
                     <select name="nationality_id" id="nationality_id" aria-label="Nationality">
                         <option value="">Select Nationality</option>
@@ -214,12 +216,6 @@
         </div>
     </div>
 
-
-
-
-
-
-    <script src="<?php echo base_url('assets/js/script.js'); ?>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 </body>

@@ -62,6 +62,11 @@ $route['contact'] = 'header/contact';
 $route['form'] = 'header/load_form_data';
 $route['destination'] = 'header/load_form_data';
 $route['form'] = 'form/index';
+// $route['form'] = 'FormController/index';
+// $route['api/countries'] = 'countrycontroller/get_countries';
+$route['nationality/get_countries'] = 'nationality/get_countries';
+
+
 
 
 
