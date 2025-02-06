@@ -81,6 +81,7 @@
             </div>
         </div>
         <h2 class="ybb row fw-400"><strong class="fw-600">Most Popular</strong> Destinations</h2>
+
         <div class="carousel-container">
             <button class="nav-button left-btn" id="left-btn">&#10094;</button>
             <div class="carousel" id="carousel">
@@ -158,7 +159,6 @@
                     <h2 class="ybb row fw-400"><strong class="fw-600">More</strong> Destinations</h2>
                 </div>
                 <div class="destination-container" id="destination-list"></div>
-
             </div>
         </section>
         <!-- Here end the more destination countries -->
