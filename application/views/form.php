@@ -59,7 +59,7 @@
     </header>
 
     <form id="vForm" name="vForm" action="#" method="post" enctype="multipart/form-data">
-        <div class="country-listshowcase" id="countryListshowcase"  style="text-align:centre;padding-left:45%">
+        <div class="country-listshowcase" id="countryListshowcase" style="text-align:centre;padding-left:45%">
             <h3>Loading country...</h3>
         </div>
 

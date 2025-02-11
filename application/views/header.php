@@ -89,63 +89,81 @@
                     <img src="<?php echo base_url('\assets\images\india.jpeg'); ?>" alt="India">
                     <div class="card-info">
                         <h3>India</h3>
-                        <button type="button" class="btn-white" value="Search">Learn More</button>
+                        <a href="http://localhost/visaonlineuae-2025-26/index.php/form"><button type="button"
+                                class="btn-white" value="Search">Learn More</button></a>
+
                     </div>
                 </div>
                 <div class="card">
                     <img src="<?php echo base_url('\assets\images\europe.jpg'); ?>" alt="Europe">
                     <div class="card-info">
                         <h3>Europe</h3>
-                        <button type="button" class="btn-white" value="Search">Learn More</button>
+                        <a href="http://localhost/visaonlineuae-2025-26/index.php/form"><button type="button"
+                                class="btn-white" value="Search">Learn More</button></a>
+
                     </div>
                 </div>
                 <div class="card">
                     <img src="<?php echo base_url('\assets\images\vietnam.jpg'); ?>" alt="Vietnam">
                     <div class="card-info">
                         <h3>Vietnam</h3>
-                        <button type="button" class="btn-white" value="Search">Learn More</button>
+                        <a href="http://localhost/visaonlineuae-2025-26/index.php/form"><button type="button"
+                                class="btn-white" value="Search">Learn More</button></a>
+
                     </div>
                 </div>
                 <div class="card">
                     <img src="<?php echo base_url('\assets\images\dubai.jpeg'); ?>" alt="Dubai">
                     <div class="card-info">
                         <h3>Dubai</h3>
-                        <button type="button" class="btn-white" value="Search">Learn More</button>
+                        <a href="http://localhost/visaonlineuae-2025-26/index.php/form"><button type="button"
+                                class="btn-white" value="Search">Learn More</button></a>
+
                     </div>
                 </div>
                 <div class="card">
                     <img src="<?php echo base_url('\assets\images\thailand.jpeg'); ?>" alt="Thailand">
                     <div class="card-info">
                         <h3>Thailand</h3>
-                        <button type="button" class="btn-white" value="Search">Learn More</button>
+                        <a href="http://localhost/visaonlineuae-2025-26/index.php/form"> <button type="button"
+                                class="btn-white" value="Search">Learn More</button></a>
+
                     </div>
                 </div>
                 <div class="card">
                     <img src="<?php echo base_url('\assets\images\andaman.jpg'); ?>" alt="Andman">
                     <div class="card-info">
                         <h3>Andman</h3>
-                        <button type="button" class="btn-white" value="Search">Learn More</button>
+                        <a href="http://localhost/visaonlineuae-2025-26/index.php/form"><button type="button"
+                                class="btn-white" value="Search">Learn More</button></a>
+
                     </div>
                 </div>
                 <div class="card">
                     <img src="<?php echo base_url('\assets\images\australia.webp'); ?>" alt="Australia">
                     <div class="card-info">
                         <h3>Australia</h3>
-                        <button type="button" class="btn-white" value="Search">Learn More</button>
+                        <a href="http://localhost/visaonlineuae-2025-26/index.php/form"><button type="button"
+                                class="btn-white" value="Search">Learn More</button></a>
+
                     </div>
                 </div>
                 <div class="card">
                     <img src="<?php echo base_url('\assets\images\turkey.jpeg'); ?>" alt="Turkey">
                     <div class="card-info">
                         <h3>Turkey</h3>
-                        <button type="button" class="btn-white" value="Search">Learn More</button>
+                        <a href="http://localhost/visaonlineuae-2025-26/index.php/form"><button type="button"
+                                class="btn-white" value="Search">Learn More</button></a>
+
                     </div>
                 </div>
                 <div class="card">
                     <img src="<?php echo base_url('\assets\images\brazil.jpg'); ?>" alt="Brazil">
                     <div class="card-info">
                         <h3>Brazil</h3>
-                        <button type="button" class="btn-white" value="Search">Learn More</button>
+                        <a href="http://localhost/visaonlineuae-2025-26/index.php/form"> <button type="button"
+                                class="btn-white" value="Search">Learn More</button></a>
+
                     </div>
                 </div>
             </div>
@@ -264,7 +282,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <img class="img-fluid" src="https://www.visauae.online/bmb/images/appimg-480x510.png"
-                                alt="Download App"style="width:50%;height:50%;">
+                                alt="Download App" style="width:50%;height:50%;">
                         </div>
                         <div class="col-md-6 text-start">
                             <h2><span style="color:#007bff">Download</span> Our App</h2>
@@ -297,7 +315,7 @@
                     </div>
 
                     <div class="social-box">
-                        <a href="https://api.whatsapp.com/send?phone=971505863986&amp;text=Hi, I just visited your website and have some queries."
+                        <a href="https://api.whatsapp.com/send?phone=971555903386&amp;text=Hi, I just visited your website and have some queries."
                             target="_blank">
                             <div class="social-content">
                                 <div class="icon-box">

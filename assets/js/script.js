@@ -2,6 +2,7 @@ $(document).ready(function () {
 	const $carousel = $("#carousel");
 	const scrollAmount = 300;
 	let autoScroll;
+
 	let isManualScroll = false;
 
 	function startAutoScroll() {
