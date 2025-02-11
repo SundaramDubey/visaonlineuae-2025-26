@@ -18,10 +18,3 @@ $route['form'] = 'form/index';
 $route['nationality/get_countries'] = 'nationality/get_countries';
 $route['nature'] = 'header/nature_view';
 
-
-
-
-
-
-
-

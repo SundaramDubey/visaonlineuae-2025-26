@@ -1,99 +1,86 @@
-// Most Popular Destination code here----->
 $(document).ready(function () {
-    const $carousel = $("#carousel");
-    const scrollAmount = 300;
-    let autoScroll;
-    let isManualScroll = false;
+	const $carousel = $("#carousel");
+	const scrollAmount = 300;
+	let autoScroll;
+	let isManualScroll = false;
 
-    // Function to start auto-scrolling
-    function startAutoScroll() {
-        stopAutoScroll(); // Clear existing interval if any
-        autoScroll = setInterval(() => {
-            if (!isManualScroll) {
-                // Check if $carousel is defined and exists
-                if ($carousel.length > 0) {
-                    let maxScroll = $carousel[0].scrollWidth - $carousel.outerWidth();
-                    let currentScroll = $carousel.scrollLeft();
+	function startAutoScroll() {
+		stopAutoScroll();
+		autoScroll = setInterval(() => {
+			if (!isManualScroll && $carousel.length > 0) {
+				let maxScroll = $carousel[0].scrollWidth - $carousel.outerWidth();
+				let currentScroll = $carousel.scrollLeft();
 
-                    if (currentScroll >= maxScroll) {
-                        // Restart scrolling from the left side when it reaches the end
-                        $carousel.animate({ scrollLeft: 0 }, 800);
-                    } else {
-                        // Continue scrolling to the right
-                        $carousel.animate(
-                            { scrollLeft: "+=" + scrollAmount },
-                            600,
-                            snapToCard
-                        );
-                    }
-                } else {
-                    console.error("Carousel element not found.");
-                }
-            }
-        }, 3000);
-    }
+				if (currentScroll >= maxScroll) {
+					$carousel.animate({ scrollLeft: 0 }, 800);
+				} else {
+					$carousel.animate(
+						{ scrollLeft: "+=" + scrollAmount },
+						600,
+						snapToCard
+					);
+				}
+			}
+		}, 3000);
+	}
 
-    // Function to stop auto-scroll when user interacts
-    function stopAutoScroll() {
-        clearInterval(autoScroll);
-        setTimeout(startAutoScroll, 5000); // Restart auto-scroll after 5 sec
-    }
+	function stopAutoScroll() {
+		clearInterval(autoScroll);
+		setTimeout(startAutoScroll, 5000);
+	}
 
-    // Scroll Left Button
-    $("#left-btn").click(function () {
-        isManualScroll = true;
-        stopAutoScroll();
-        $carousel.animate({ scrollLeft: "-=" + scrollAmount }, 400, function () {
-            isManualScroll = false;
-        });
-    });
+	$("#left-btn").click(function () {
+		isManualScroll = true;
+		stopAutoScroll();
+		$carousel.animate(
+			{ scrollLeft: "-=" + scrollAmount },
+			400,
+			() => (isManualScroll = false)
+		);
+	});
 
-    // Scroll Right Button
-    $("#right-btn").click(function () {
-        isManualScroll = true;
-        stopAutoScroll();
-        $carousel.animate({ scrollLeft: "+=" + scrollAmount }, 400, function () {
-            isManualScroll = false;
-        });
-    });
+	$("#right-btn").click(function () {
+		isManualScroll = true;
+		stopAutoScroll();
+		$carousel.animate(
+			{ scrollLeft: "+=" + scrollAmount },
+			400,
+			() => (isManualScroll = false)
+		);
+	});
 
-    // Snaps to the nearest card dynamically
-    function snapToCard() {
-        let scrollLeft = $carousel.scrollLeft();
-        let closestCard = null;
-        let minDistance = Infinity;
+	function snapToCard() {
+		let scrollLeft = $carousel.scrollLeft();
+		let closestCard = null;
+		let minDistance = Infinity;
 
-        $(".card").each(function () {
-            let cardOffset = $(this).position().left + $carousel.scrollLeft();
-            let distance = Math.abs(cardOffset - scrollLeft);
+		$(".card").each(function () {
+			let cardOffset = $(this).position().left + $carousel.scrollLeft();
+			let distance = Math.abs(cardOffset - scrollLeft);
 
-            if (distance < minDistance) {
-                minDistance = distance;
-                closestCard = $(this);
-            }
-        });
+			if (distance < minDistance) {
+				minDistance = distance;
+				closestCard = $(this);
+			}
+		});
 
-        if (closestCard) {
-            $carousel.animate(
-                { scrollLeft: closestCard.position().left + $carousel.scrollLeft() },
-                300
-            );
-            $(".card").removeClass("active");
-            closestCard.addClass("active");
-        }
-    }
+		if (closestCard) {
+			$carousel.animate(
+				{ scrollLeft: closestCard.position().left + $carousel.scrollLeft() },
+				300
+			);
+			$(".card").removeClass("active");
+			closestCard.addClass("active");
+		}
+	}
 
-    // Ensure $carousel exists before starting auto-scroll
-    if ($carousel.length > 0) {
-        // Start auto-scroll on load
-        startAutoScroll();
-    } else {
-        console.error("Carousel element not found.");
-    }
+	if ($carousel.length > 0) {
+		startAutoScroll();
+	} else {
+		console.error("Carousel element not found.");
+	}
 });
 
-
-// Define country list as an array
 const countries = [
 	"Afghanistan",
 	"Albania",
@@ -291,14 +278,21 @@ const countries = [
 	"Zimbabwe",
 ];
 
-// Get the container divs
 const $destinationList = $("#destination-list");
 const $dropdown = $("#destination_id_form");
+const $countryShowcase = $("#countryListshowcase h3");
 
-// Append destination items dynamically
 if ($destinationList.length) {
 	countries.forEach((country, index) => {
-		const $div = $("<div>").addClass("destination-item").text(country);
+		const $div = $("<div>")
+			.addClass("destination-item")
+			.text(country)
+			.css("cursor", "pointer")
+			.on("click", () => {
+				window.location.href = `http://localhost/visaonlineuae-2025-26/index.php/form?country=${encodeURIComponent(
+					country
+				)}`;
+			});
 
 		if ((index + 1) % 3 === 0) {
 			$div.addClass("highlight");
@@ -310,12 +304,23 @@ if ($destinationList.length) {
 	console.error("destinationList element not found.");
 }
 
-
 countries.forEach((country, index) => {
-	// Destination dropdown option
-	const $destinationOption = $("<option>")
-		.val(`destination_${index + 1}`)
-		.text(country);
-	$dropdown.append($destinationOption);
-
+	$dropdown.append(
+		$("<option>")
+			.val(`destination_${index + 1}`)
+			.text(country)
+	);
 });
+
+$dropdown.on("change", function () {
+	let selectedCountry = $(this).val();
+	if (selectedCountry) {
+		window.location.href = `http://localhost/visaonlineuae-2025-26/index.php/form?country=${encodeURIComponent(
+			selectedCountry
+		)}`;
+	}
+});
+
+
+
+

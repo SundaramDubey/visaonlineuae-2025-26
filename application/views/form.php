@@ -7,7 +7,6 @@
     <title><?php echo isset($title) ? $title : "Visa UAE"; ?></title>
     <link rel="stylesheet" href="<?php echo base_url('assets/css/header.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/form.css'); ?>">
-    <link rel="stylesheet" href="script_form.js">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
@@ -60,7 +59,10 @@
     </header>
 
     <form id="vForm" name="vForm" action="#" method="post" enctype="multipart/form-data">
-        <div class="country-list" id="countryList">Loading countries...</div>
+        <div class="country-listshowcase" id="countryListshowcase"  style="text-align:centre;padding-left:45%">
+            <h3>Loading country...</h3>
+        </div>
+
         <div class="form-section">
             <h3>General Details</h3>
 

@@ -264,7 +264,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <img class="img-fluid" src="https://www.visauae.online/bmb/images/appimg-480x510.png"
-                                alt="Download App">
+                                alt="Download App"style="width:50%;height:50%;">
                         </div>
                         <div class="col-md-6 text-start">
                             <h2><span style="color:#007bff">Download</span> Our App</h2>
@@ -413,11 +413,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 
     <script src="<?php echo base_url('assets/js/script.js'); ?>"></script>
 

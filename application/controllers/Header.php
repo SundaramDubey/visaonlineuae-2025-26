@@ -70,8 +70,6 @@ class Carousel extends CI_Controller
 	}
 }
 
-
-
 class Contact extends CI_Controller
 {
 
