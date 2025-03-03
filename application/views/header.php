@@ -180,6 +180,28 @@
             </div>
         </section>
         <!-- Here end the more destination countries -->
+        <!-- <div class="carousel-container-2">
+            <button class="nav-button prev" onclick="scrollCarousel(-1)">❮</button>
+            <div class="carousel">
+                <div class="card">
+                    <img src="vietnam.jpg" alt="Vietnam">
+                    <div class="location">Vietnam</div>
+                </div>
+                <div class="card">
+                    <img src="dubai.jpg" alt="Dubai">
+                    <div class="location">Dubai</div>
+                </div>
+                <div class="card">
+                    <img src="bhutan.jpg" alt="Bhutan">
+                    <div class="location">Bhutan</div>
+                </div>
+                <div class="card">
+                    <img src="kerala.jpg" alt="Kerala">
+                    <div class="location">Kerala</div>
+                </div>
+            </div>
+            <button class="nav-button next" onclick="scrollCarousel(1)">❯</button>
+        </div> -->
 
         <!-- Here start the code the step to follow -->
         <section class="whyus row bannerBox">

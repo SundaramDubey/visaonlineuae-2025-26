@@ -1200,7 +1200,7 @@ img.lazyloaded {
 
 /* Footer Background */
 .footerBG {
-	background:  #13b58d ;
+	background: #41ba9c;
 	color: black;
 	padding: 20px 0;
 	text-align: center;
@@ -1329,3 +1329,7 @@ img.lazyloaded {
 		width: 100%; /* 1 box in one row */
 	}
 }
+
+
+
+

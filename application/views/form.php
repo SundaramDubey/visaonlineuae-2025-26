@@ -59,8 +59,8 @@
     </header>
 
     <form id="vForm" name="vForm" action="#" method="post" enctype="multipart/form-data">
-        <div class="country-listshowcase" id="countryListshowcase" style="text-align:centre;padding-left:45%">
-            <h3>Loading country...</h3>
+        <div class="country-listshowcase" id="countryListshowcase" style="text-align:centre;">
+            <!-- <h3>Loading country...</h3> -->
         </div>
 
         <div class="form-section">
@@ -204,19 +204,30 @@
         </div>
         <button type="submit">Submit Applicant</button>
         <button type="submit">Add Another Person</button>
+
+        <footer class="form-footer">
+            <div class="row footerBG">
+                <div class="wrap">
+                    <div class="row line-height-reg mobRow mobAlignCenter alignFromCenter">
+                        <p class="content">
+                            www.instadubaivisa.ae is a site operated by Insta Tourism L.L.C, a travel agency registered
+                            in Dubai
+                            under Registration 1660669 number. Commercial License Number: 929791 issued on
+                            08/02/2021.Head
+                            Office located at Office No.201, M SQUARE COMMERCIAL BUILDING, Near Double Tree Hotel, Bur
+                            Dubai,
+                            Dubai, United Arab Emirates. <br>
+                            All rights Reserved. 2025 © YourWebsite.com
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
     </form>
 
-    <div class="row footerBG">
-        <div class="wrap">
-            <div class="row line-height-reg mobRow mobAlignCenter alignFromCenter">
-                www.instadubaivisa.ae is a site operated by Insta Tourism L.L.C, a travel agency registered in Dubai
-                under Registration 1660669 number. Commercial License Number: 929791 issued on 08/02/2021.Head
-                Office located at Office No.201, M SQUARE COMMERCIAL BUILDING, Near Double Tree Hotel, Bur Dubai,
-                Dubai, United Arab Emirates. <br>
-                All rights Reserved. 2025 © YourWebsite.com
-            </div>
-        </div>
-    </div>
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
